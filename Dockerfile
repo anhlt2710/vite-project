@@ -13,6 +13,7 @@ RUN apk add --update --no-cache \
 WORKDIR /app
 COPY ["package.json", "package-lock.json*", "./"]
 RUN npm install
+RUN npm install mocha chai -g
 COPY . .
 RUN npm run build
 
